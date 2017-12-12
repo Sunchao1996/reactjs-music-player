@@ -12,7 +12,8 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "requirejs": "^2.3.3"
+    "requirejs": "^2.3.3",
+    "react-router": "^2.8.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.0",
