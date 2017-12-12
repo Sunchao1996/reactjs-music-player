@@ -60,7 +60,7 @@ module.exports = {
     devServer: {
         compress: true, // 启用gzip压缩
         contentBase: path.join(__dirname,"views"),
-        port: port, // 运行端口3000
+        port: port, // 运行端口3011
         inline: true,
         hot: true,
         historyApiFallback: true,
