@@ -13,7 +13,7 @@ module.exports = {
     devtool: '#source-map',
     entry: {
         bundle: './main.jsx',
-        vendor: ['react', 'react-dom', 'jquery', 'react-router', 'redux'],
+        vendor: ['react', 'react-dom', 'jquery', 'react-router'],
     },
     output: {
         path: path.join(__dirname, '/bin'),
