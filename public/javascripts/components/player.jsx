@@ -2,6 +2,7 @@ import React from 'react';
 import Progress from './progress';
 import '../../stylesheets/palyer.less';
 import PubSub from 'pubsub-js';
+import {Link} from 'react-router';
 
 let duration = null;
 class Player extends React.Component {
@@ -30,13 +31,14 @@ class Player extends React.Component {
 
     changeVolumn(volume) {
 
-        $("#player").jPlayer('volume', volume)
+        $("#player").jPlayer('volume', volume);
     }
 
     changeProgress(progress) {
-
+        $("#player").jPlayer("play", duration * progress);
         this.setState({
-            isPlay: false
+            isPlay: true,
+            bar: progress*100
         });
     }
 
@@ -67,7 +69,7 @@ class Player extends React.Component {
     render() {
         return (
             <div className="player-page">
-                <h1 className="caption">我的私人音乐坊 &gt;</h1>
+                <h1 className="caption"><Link to="/list">我的私人音乐坊 &gt;</Link></h1>
                 <div className="mt20 row">
                     <div className="controll-wrapper">
                         <h2 className="music-title">{this.props.currentMusic.title}</h2>
