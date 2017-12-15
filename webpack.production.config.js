@@ -69,7 +69,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {from: './views/index.html', to: 'index.html'},
-            {toType: 'dir', from: './public/static', to: 'static'}
+            {toType: 'dir', from: './views/static', to: 'static'}
         ])
     ]
 }
