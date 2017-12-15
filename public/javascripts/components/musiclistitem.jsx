@@ -1,6 +1,6 @@
 import React from 'react';
 import PubSub from 'pubsub-js';
-import '../../stylesheets/musiclistitem.less';
+
 import deleteIcon from '../../fonticon/delete.png';
 import playIcon from '../../fonticon/paly.png';
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../stylesheets/header.less';
+import {Link} from 'react-router';
 import LogoURL from '../../../views/static/images/logo.png';
 class Header extends React.Component {
     render() {
