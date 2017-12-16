@@ -9,7 +9,8 @@ class App extends React.Component {
         this.state = {
             items: MUSIC_LIST,
             currentMusic: MUSIC_LIST[0],
-            repeatType: 'cycle'
+            repeatType: 'cycle',
+            detail:MUSIC_LIST
         }
     }
 
@@ -77,6 +78,15 @@ class App extends React.Component {
             });
             this.playMusic(this.state.currentMusic);
         });
+        PubSub.subscribe("DETAIL_ITEM", (msg, item) => {
+            this.setState(
+                {
+                    detail: item
+                },function(){
+                    this.props.history.push('/detail');
+                }
+            );
+        })
     }
 
     componentWillUnmount() {
@@ -85,6 +95,7 @@ class App extends React.Component {
         PubSub.unsubscribe("CHANGE_REPEAT");
         PubSub.unsubscribe("DEL_MUSIC");
         PubSub.unsubscribe("PLAY_MUSIC");
+        PubSub.unsubscribe("DETAIL_ITEM");
     }
 
     playMusic(item) {

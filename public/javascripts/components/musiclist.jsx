@@ -10,7 +10,7 @@ class MusicList extends React.Component {
                     {
                         this.props.items.map(function (item) {
                             return (
-                                <MusicListItem key={item.id} item={item} focus={this.props.currentMusic === item}/>);
+                                <MusicListItem history={this.props.history} key={item.id} item={item} focus={this.props.currentMusic === item}/>);
                         }.bind(this))
                     }
                 </ul>

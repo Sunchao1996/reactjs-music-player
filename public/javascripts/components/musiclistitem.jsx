@@ -14,11 +14,16 @@ class MusicListItem extends React.Component {
         PubSub.publish('DEL_MUSIC', item)
     }
 
+    detailHandle(item,e){
+        e.stopPropagation();
+        e.preventDefault();
+        PubSub.publish('DETAIL_ITEM',item);
+    }
     render() {
         let item = this.props.item;
         return (
             <li className={`row components-listitem${this.props.focus ? ' focus' : ''}`}>
-                <p ><span className="bold" style={{cursor: 'pointer'}}>{item.title}</span>-{item.artist}</p>
+                <p ><span className="bold" style={{cursor: 'pointer'}} onClick={this.detailHandle.bind(this,item)}>{item.title}</span>-{item.artist}</p>
                 <p className="-col-auto"
                    style={{width: '20px', height: '20px', paddingRight: '20px', paddingBottom: '10px'}}
                    onClick={this.playMusic.bind(this, item)}>
