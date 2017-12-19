@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from '../../components/header';
 import {MUSIC_LIST} from '../../data/config';
-
+import PropTypes from 'prop-types';
 import PubSub from 'pubsub-js';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -12,6 +13,7 @@ class App extends React.Component {
             repeatType: 'cycle',
             detail:MUSIC_LIST
         }
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
 
     componentDidMount() {
@@ -83,7 +85,10 @@ class App extends React.Component {
                 {
                     detail: item
                 },function(){
-                    this.props.history.push('/detail');
+
+                    //错误警告 [react-router] `props.history` and `context.history` are deprecated. Please use `context.router`
+                    //this.props.history.push('/detail');
+                    this.context.router.push('/detail');
                 }
             );
         })
@@ -117,5 +122,9 @@ class App extends React.Component {
             </div>
         );
     }
+
+}
+App.contextTypes = {
+    router: PropTypes.object
 }
 export {App as default}

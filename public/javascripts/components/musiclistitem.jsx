@@ -3,8 +3,12 @@ import PubSub from 'pubsub-js';
 
 import deleteIcon from '../../fonticon/delete.png';
 import playIcon from '../../fonticon/paly.png';
-
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 class MusicListItem extends React.Component {
+    constructor(props,context){
+        super(props,context);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+    }
     playMusic(item, e) {
         PubSub.publish('PLAY_MUSIC', item)
     }

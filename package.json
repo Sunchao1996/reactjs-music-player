@@ -11,9 +11,10 @@
     "jquery": "^3.2.1",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
+    "react-addons-pure-render-mixin": "^15.6.2",
     "react-dom": "^15.5.4",
-    "requirejs": "^2.3.3",
-    "react-router": "^2.8.1"
+    "react-router": "^2.8.1",
+    "requirejs": "^2.3.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.0",
@@ -41,7 +42,9 @@
     "less-loader": "^4.0.3",
     "open-browser-webpack-plugin": "^0.0.5",
     "postcss-loader": "^2.0.5",
+    "prop-types": "^15.6.0",
     "pubsub-js": "^1.5.7",
+    "react-addons-perf": "^15.4.2",
     "style-loader": "^0.16.1",
     "url-loader": "~0.5.5",
     "webpack": "^2.4.1",

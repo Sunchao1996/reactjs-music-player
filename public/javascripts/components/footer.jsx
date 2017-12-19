@@ -1,7 +1,12 @@
 import React from 'react';
 import BackURL from '../../fonticon/back.png'
 import {Link} from 'react-router'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
 class Footer extends React.Component {
+    constructor(props,context){
+        super(props,context);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+    }
     render() {
         return (
             <div className="row footer">

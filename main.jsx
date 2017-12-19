@@ -5,6 +5,9 @@ import App from './public/javascripts/container/app';
 import Player from './public/javascripts/components/player';
 import MusicList from './public/javascripts/components/musiclist';
 import MusicDetail from './public/javascripts/components/musicdetail';
+import Perf from 'react-addons-perf'
+    window.Perf = Perf
+
 ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={App}>

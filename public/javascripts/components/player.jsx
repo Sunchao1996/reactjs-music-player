@@ -3,12 +3,14 @@ import Progress from './progress';
 import '../../stylesheets/palyer.less';
 import PubSub from 'pubsub-js';
 import {Link} from 'react-router';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 let duration = null;
 class Player extends React.Component {
     constructor(props) {
         super(props);
         this.state = {bar: 0, isPlay: true};
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
 
     componentDidMount() {
